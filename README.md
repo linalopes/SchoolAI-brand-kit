@@ -1,97 +1,160 @@
-# School of Tomorrow’s AI — Living Brand Kit (HTML/CSS)
+# School of Tomorrow's AI — Living Brand Kit
 
-This repository is a lightweight **living brand guideline** for **School of Tomorrow’s AI**:
-colors, typography, logos, and generative patterns — all in a simple, copy-friendly HTML page.
+A lightweight, interactive **living brand guideline** built with HTML, CSS, and vanilla JavaScript. No build tools required.
 
-It’s designed to be useful for both:
-- **Designers** (HEX/RGB, font links, downloadable SVG assets)
-- **Developers** (semantic CSS tokens, ready-to-copy snippets)
+## What is this?
 
----
+This repository contains the official brand kit for **School of Tomorrow's AI** — a single-page reference for colors, typography, logos, and generative patterns. Everything is copy-friendly and designed for both designers and developers.
 
-## What’s inside
+## What's included
 
-- **`index.html`** — the brand landing page (manual)
-- **`styles.css`** — design tokens + base components (buttons, cards, layout)
-- **`logo-big.svg`** — primary logo (SVG)
-- **`logo-horizontal.svg`** — horizontal lockup (SVG)
-- **`pattern-*.svg`** — exported SVG patterns (optional / add as you generate)
+| File | Description |
+|------|-------------|
+| `index.html` | The brand landing page with interactive components |
+| `styles.css` | Design tokens + base components (buttons, cards, layout) |
+| `tokens.json` | Design tokens in JSON format for tooling integration |
+| `logo-big.svg` | Primary logo (circular) |
+| `logo-horizontal.svg` | Horizontal lockup |
+| `favicon.svg` | Browser favicon |
+| `pattern-*.svg` | Exported SVG patterns (add as you generate) |
 
-Also includes a **live patterns preview** (lazy-loaded iframe) pointing to:
-https://linalopes.github.io/SOTA-vignette-generator/
+## Live Demo
 
----
+**GitHub Pages:** [https://linalopes.github.io/SOTA-brand-kit/](https://linalopes.github.io/SOTA-brand-kit/)
 
-## Design tokens (quick overview)
+The site also includes a lazy-loaded iframe preview of the [SOTA Vignette Generator](https://linalopes.github.io/SOTA-vignette-generator/) for creating custom patterns.
 
-Semantic tokens are the recommended way to use colors in UI:
-
-- `--color-primary` (Pink)
-- `--color-on-primary` (White)
-- `--color-text` (Deep Purple)
-- `--color-surface` (Gray Green)
-- `--color-accent` (Turquoise)
-- `--radius` is always `4px`
-
-Typography:
-
-- Titles: **Space Grotesk** (Light / Medium)
-- Body: **Inter** (Light / SemiBold)
-- Highlights: **Courier Prime** (Regular / Bold)
-
----
-
-## How to run locally
+## Run Locally
 
 No build step required.
 
-1. Clone the repo
-2. Open `index.html` in your browser
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/linalopes/SOTA-brand-kit.git
+   cd SOTA-brand-kit
+   ```
 
-Optional (recommended): serve locally to avoid any browser restrictions around file URLs.
+2. Open `index.html` directly in your browser, or serve locally to avoid file:// restrictions:
+   ```bash
+   # Python 3
+   python -m http.server 8000
+   
+   # Node.js (if you have npx)
+   npx serve .
+   
+   # PHP
+   php -S localhost:8000
+   ```
 
-Example:
+3. Visit [http://localhost:8000](http://localhost:8000)
 
-```bash
-python -m http.server 8000
-Then open:
+## Deploy on GitHub Pages
 
-http://localhost:8000
+1. Go to your repository **Settings** → **Pages**
+2. Under "Build and deployment", select:
+   - **Source:** Deploy from a branch
+   - **Branch:** `main` (or `master`) / `/ (root)`
+3. Click **Save**
+4. Your site will be live at `https://<username>.github.io/<repo-name>/`
 
-Updating the brand kit
-Colors / tokens
-Edit :root in styles.css to update tokens.
-The UI reads values from CSS variables, so you usually won’t need to change HTML.
+## Exporting & Adding Pattern SVGs
 
-Logos
-Replace or update:
+1. Use the [SOTA Vignette Generator](https://linalopes.github.io/SOTA-vignette-generator/) to create patterns
+2. Export as SVG for crisp, scalable graphics
+3. Save files in the project root with naming convention:
+   ```
+   pattern-1.svg
+   pattern-2.svg
+   pattern-3.svg
+   ```
+4. The Patterns section in `index.html` includes download links for `pattern-1.svg` through `pattern-3.svg`
 
-logo-big.svg
+## Notes for Designers
 
-logo-horizontal.svg
+### Colors
 
-The page includes download links to these files.
+| Name | HEX | RGB | CSS Variable |
+|------|-----|-----|--------------|
+| Deep Purple | `#22113E` | `rgb(34, 17, 62)` | `--color-text` |
+| Gray Green | `#CAD8D8` | `rgb(202, 216, 216)` | `--color-surface` |
+| Pink | `#EA7DFF` | `rgb(234, 125, 255)` | `--color-primary` |
+| Turquoise | `#08F2DB` | `rgb(8, 242, 219)` | `--color-accent` |
+| White | `#FFFFFF` | `rgb(255, 255, 255)` | `--color-bg` |
 
-Patterns (SVG)
-Export your generated patterns as SVG and save in the project root, e.g.:
+### Typography
 
-pattern-1.svg
+| Role | Font | Weights | Google Fonts |
+|------|------|---------|--------------|
+| Titles | Space Grotesk | 300 (Light), 500 (Medium) | [Link](https://fonts.google.com/specimen/Space+Grotesk) |
+| Body | Inter | 300 (Light), 600 (SemiBold) | [Link](https://fonts.google.com/specimen/Inter) |
+| Highlights | Courier Prime | 400 (Regular), 700 (Bold) | [Link](https://fonts.google.com/specimen/Courier+Prime) |
 
-pattern-2.svg
+**Tip:** Use "Download family" on Google Fonts to get font files for Figma, Illustrator, or Affinity Designer.
 
-pattern-3.svg
+### Assets
 
-The “Patterns” card includes download links for these files.
+- Logos and patterns are delivered as **SVG** for maximum compatibility
+- All assets have download buttons on the brand kit page
+- Shape radius is always `4px` (`--radius`)
 
-Notes for designers
-Colors are shown with HEX + RGB and have copy buttons.
+## Notes for Developers
 
-Fonts include Google Fonts links and guidance to use “Download family”.
+### Semantic Tokens
 
-Logos and patterns are delivered as SVG for maximum compatibility (Figma, Illustrator, Affinity, etc.).
+Use semantic color tokens instead of raw values:
 
-License
-Add your preferred license here (e.g. MIT / CC BY / proprietary).
-If you want this to be private brand IP, write something like:
+```css
+/* Recommended */
+color: var(--color-text);
+background: var(--color-surface);
 
-© School of Tomorrow’s AI. All rights reserved.
+/* Avoid */
+color: #22113E;
+background: #CAD8D8;
+```
+
+### Available CSS Variables
+
+```css
+/* Colors */
+--color-bg          /* Background (white) */
+--color-text        /* Text/ink (deep purple) */
+--color-surface     /* Surface (gray green) */
+--color-primary     /* Primary action (pink) */
+--color-on-primary  /* Text on primary (white) */
+--color-accent      /* Accent (turquoise) */
+
+/* Typography */
+--font-title        /* Space Grotesk */
+--font-text         /* Inter */
+--font-mono         /* Courier Prime */
+
+/* Spacing scale */
+--space-1 through --space-6
+
+/* Shape */
+--radius            /* 4px */
+```
+
+### Component Classes
+
+```html
+<button class="button">Default</button>
+<button class="button button--primary">Primary</button>
+<button class="button button--accent">Accent</button>
+<span class="badge">Badge text</span>
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+**Note:** While the code is open source, the **School of Tomorrow's AI** brand name, logos, and visual identity may be protected trademarks. If you fork or adapt this project, please replace the brand assets with your own.
+
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## Code of Conduct
+
+This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
