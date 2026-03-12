@@ -19,12 +19,13 @@
     --color-surface:    var(--brand-gray-green);
 
     --color-primary:    var(--brand-pink);
-    --color-on-primary: var(--brand-white);
+    --color-on-primary: var(--brand-deep-purple);
 
     --color-accent:     var(--brand-turquoise);
 
     /* Optional safety token (sometimes useful for tiny text on pink) */
     --color-on-primary-strong: var(--brand-deep-purple);
+    --color-text-muted: #888888;
 
     /* -------------------------------------------------------
       Fonts (ensure these fonts are loaded in HTML)
@@ -127,8 +128,8 @@
   .badge{
     display:inline-flex;
     align-items:center;
-    gap: 8px;
-    padding: 8px 12px;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2);
     border-radius: var(--radius);
     border: var(--border-width) solid rgba(34, 17, 62, 0.16);
     background: rgba(255,255,255,0.7);
@@ -140,7 +141,7 @@
     display:inline-flex;
     align-items:center;
     gap: 10px;
-    padding: 12px 16px;
+    padding: var(--space-2) var(--space-3);
     border-radius: var(--radius);
     border: var(--border-width) solid rgba(34, 17, 62, 0.18);
     background: var(--color-bg);
@@ -189,7 +190,7 @@
   .swatch .meta{
     display:flex;
     justify-content:space-between;
-    gap: 10px;
+    gap: var(--space-2);
     font-size: 13px;
     opacity: 0.9;
   }
@@ -197,9 +198,9 @@
   .copy{
     font-family: var(--font-mono);
     font-size: 13px;
-    border: 1px dashed rgba(34, 17, 62, 0.35);
+    border: var(--border-width) dashed rgba(34, 17, 62, 0.35);
     border-radius: var(--radius);
-    padding: 8px 10px;
+    padding: var(--space-1) var(--space-2);
     background: rgba(255,255,255,0.6);
     cursor: pointer;
   }
@@ -247,7 +248,7 @@
   .swatch-info{
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-1);
   }
 
   .swatch-name{
@@ -269,7 +270,7 @@
 
   .swatch-actions{
     display: flex;
-    gap: 8px;
+    gap: var(--space-1);
     flex-wrap: wrap;
     margin-top: var(--space-2);
   }
@@ -374,8 +375,130 @@
     flex-wrap: wrap;
   }
 
+  /* --- Logos v2 (moved from index.html) --- */
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+  }
+
+  .logo-tile {
+    border-radius: var(--radius);
+    padding: var(--space-5) var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    border: 1px solid rgba(34,17,62,0.08);
+  }
+  .logo-tile--white  { background: var(--color-bg); }
+  .logo-tile--dark   { background: var(--color-text); }
+  .logo-tile--pink   { background: var(--color-primary); }
+  .logo-tile--surface { background: var(--color-surface); }
+
+  .logo-tile svg {
+    width: 100%;
+    height: auto;
+    max-width: 220px;
+  }
+
+  .logo-tile img {
+    width: 100%;
+    height: auto;
+    max-width: 220px;
+    display: block;
+  }
+
+  .logo-tile-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: var(--space-2);
+    text-align: center;
+    display: block;
+  }
+
+  .logo-tile-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-tile-wrap--full {
+    grid-column: 1 / -1;
+  }
+
+  .logo-tile--full {
+    grid-column: 1 / -1;
+    min-height: 120px;
+  }
+
+  .logo-tile--full svg { max-width: 520px; }
+  .logo-tile--full img { max-width: 520px; }
+
+  .logo-downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-2);
+  }
+
+  /* --- Utilities used to remove inline styles --- */
+  .card--mt-5{
+    margin-top: var(--space-5);
+  }
+
+  .section-label--minor{
+    margin-bottom: var(--space-2);
+    font-size: 11px;
+  }
+
+  .section-label--mt-4{
+    margin-top: var(--space-4);
+  }
+
+  .swatch--text{
+    background: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  .swatch--surface{
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  .swatch--primary{
+    background: var(--color-primary);
+    color: var(--color-on-primary-strong);
+  }
+
+  .swatch--accent{
+    background: var(--color-accent);
+    color: var(--color-text);
+  }
+
+  .components-row{
+    display:flex;
+    gap: var(--space-2);
+    flex-wrap:wrap;
+    margin-top: var(--space-3);
+  }
+
+  .components-actions{
+    margin-top: var(--space-4);
+    display:flex;
+    gap: var(--space-2);
+    flex-wrap:wrap;
+  }
+
   /* Mobile: patterns adjustments */
   @media (max-width: 720px){
+    .logos-grid{
+      grid-template-columns: 1fr;
+    }
+    .logo-tile--full{
+      grid-column: 1;
+    }
     .patterns-frame{
       min-height: 420px;
     }
@@ -616,7 +739,7 @@
 
   .type-actions{
     display: flex;
-    gap: 12px;
+    gap: var(--space-2);
     flex-wrap: wrap;
     margin-bottom: var(--space-5);
   }
@@ -663,7 +786,7 @@
   .type-font-info{
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-1);
   }
 
   .type-font-name{
@@ -692,7 +815,7 @@
 
   .type-embed-actions{
     display: flex;
-    gap: 12px;
+    gap: var(--space-2);
     flex-wrap: wrap;
   }
 
@@ -708,7 +831,7 @@
 
   .type-shape-content{
     display: flex;
-    gap: 12px;
+    gap: var(--space-2);
     flex-wrap: wrap;
     align-items: center;
   }
