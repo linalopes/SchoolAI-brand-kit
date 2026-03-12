@@ -12,14 +12,32 @@
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="site-header__content">
+      <div class="logo-mark"><span>AI</span></div>
+      <p class="site-header__school-of">SCHOOL OF</p>
+      <h1 class="site-header__name">Tomorrow's AI</h1>
+      <div class="site-header__divider"></div>
+      <p class="site-header__philosophy">AI as material.</p>
+      <p class="site-header__sub">Artistic research for the age of intelligent systems.</p>
+      <p class="site-header__doc-label">This is how the school looks, speaks, and moves.</p>
+    </div>
+  </header>
+
   <main class="container">
-    <h1>School of Tomorrow's AI</h1>
-    <p class="mono">Living Brand Kit — semantic tokens + CSS + examples.</p>
     <!-- lang="en" throughout, v2 -->
 
     <!-- ── LOGOS ─────────────────────────────────────────── -->
     <section class="card card--mt-5">
-      <p class="mono section-label">LOGOS</p>
+      <div class="section-header">
+        <span class="section-header__number">01</span>
+        <div class="section-header__right">
+          <span class="section-header__label">LOGOS</span>
+          <span class="section-header__title">The Mark & Lockups</span>
+          <div class="section-header__accent"></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
 
       <!-- Mark row: 3 tiles -->
       <p class="mono section-label section-label--minor">The Mark</p>
@@ -31,6 +49,7 @@
             <img src="./logos/mark-white.svg" alt="School of Tomorrow's AI mark" />
           </div>
           <span class="logo-tile-label">positive · white</span>
+          <a class="logo-download" href="./logos/mark-white.svg" download>↓ download svg</a>
         </div>
 
         <!-- Mark / dark -->
@@ -39,6 +58,7 @@
             <img src="./logos/mark-dark.svg" alt="School of Tomorrow's AI mark" />
           </div>
           <span class="logo-tile-label">positive · dark</span>
+          <a class="logo-download" href="./logos/mark-dark.svg" download>↓ download svg</a>
         </div>
 
         <!-- Mark / negative -->
@@ -47,6 +67,7 @@
             <img src="./logos/mark-negative.svg" alt="School of Tomorrow's AI mark negative" />
           </div>
           <span class="logo-tile-label">negative · pink</span>
+          <a class="logo-download" href="./logos/mark-negative.svg" download>↓ download svg</a>
         </div>
       </div>
 
@@ -60,6 +81,7 @@
             <img src="./logos/vertical-white.svg" alt="School of Tomorrow's AI vertical lockup" />
           </div>
           <span class="logo-tile-label">white</span>
+          <a class="logo-download" href="./logos/vertical-white.svg" download>↓ download svg</a>
         </div>
 
         <!-- Vertical dark -->
@@ -68,6 +90,7 @@
             <img src="./logos/vertical-dark.svg" alt="School of Tomorrow's AI vertical lockup" />
           </div>
           <span class="logo-tile-label">dark</span>
+          <a class="logo-download" href="./logos/vertical-dark.svg" download>↓ download svg</a>
         </div>
 
         <!-- Vertical surface -->
@@ -76,6 +99,7 @@
             <img src="./logos/vertical-transparent.svg" alt="School of Tomorrow's AI vertical lockup" />
           </div>
           <span class="logo-tile-label">gray green</span>
+          <a class="logo-download" href="./logos/vertical-transparent.svg" download>↓ download svg</a>
         </div>
       </div>
 
@@ -88,6 +112,7 @@
             <img src="./logos/horizontal-white.svg" alt="School of Tomorrow's AI horizontal lockup" />
           </div>
           <span class="logo-tile-label">horizontal · white</span>
+          <a class="logo-download" href="./logos/horizontal-white.svg" download>↓ download svg</a>
         </div>
 
         <div class="logo-tile-wrap logo-tile-wrap--full">
@@ -95,95 +120,213 @@
             <img src="./logos/horizontal-dark.svg" alt="School of Tomorrow's AI horizontal lockup dark" />
           </div>
           <span class="logo-tile-label">horizontal · dark</span>
+          <a class="logo-download" href="./logos/horizontal-dark.svg" download>↓ download svg</a>
         </div>
       </div>
 
-      <!-- Downloads v2 -->
-      <div class="logo-downloads">
-        <p class="mono section-label">DOWNLOADS</p>
-        <div class="logo-downloads-grid">
-          <a href="./logos/mark-white.svg"             download class="button">mark-white.svg</a>
-          <a href="./logos/mark-dark.svg"              download class="button">mark-dark.svg</a>
-          <a href="./logos/mark-negative.svg"          download class="button">mark-negative.svg</a>
-          <a href="./logos/mark-transparent.svg"       download class="button">mark-transparent.svg</a>
-          <a href="./logos/vertical-white.svg"         download class="button">vertical-white.svg</a>
-          <a href="./logos/vertical-dark.svg"          download class="button">vertical-dark.svg</a>
-          <a href="./logos/vertical-transparent.svg"   download class="button">vertical-transparent.svg</a>
-          <a href="./logos/horizontal-white.svg"       download class="button">horizontal-white.svg</a>
-          <a href="./logos/horizontal-dark.svg"        download class="button">horizontal-dark.svg</a>
-          <a href="./logos/horizontal-transparent.svg" download class="button">horizontal-transparent.svg</a>
+      <div class="usage-block">
+        <p class="usage-block__label">USAGE</p>
+        <div class="do-dont">
+          <div class="dd-block">
+            <span class="dd-tag dd-tag--do">DO</span>
+            <div class="dd-preview dd-preview--purple">
+              <div class="dd-mark" style="background: var(--color-primary); color: var(--color-on-primary);">AI</div>
+            </div>
+            <p class="dd-rule">Pink mark on Deep Purple — 5.1:1 · AA</p>
+            <div class="dd-preview dd-preview--gg">
+              <div class="dd-mark" style="background: var(--color-primary); color: var(--color-on-primary);">AI</div>
+            </div>
+            <p class="dd-rule">Pink mark on Gray Green — sufficient contrast</p>
+            <div class="dd-preview dd-preview--pink">
+              <div class="dd-mark" style="background: var(--color-text); color: var(--color-bg);">AI</div>
+            </div>
+            <p class="dd-rule">Negative mark on Pink — 8.6:1 · AAA</p>
+          </div>
+          <div class="dd-block">
+            <span class="dd-tag dd-tag--dont">DON'T</span>
+            <div class="dd-preview dd-preview--white">
+              <div class="dd-mark" style="background: var(--color-primary); color: var(--color-bg);">AI</div>
+            </div>
+            <p class="dd-rule">White text on Pink — 1.97:1 · FAIL. Text disappears.</p>
+            <div class="dd-preview dd-preview--white">
+              <span style="font-family: var(--font-title); font-size: 15px; font-weight: 300; color: var(--color-primary);">Tomorrow's AI</span>
+            </div>
+            <p class="dd-rule">Pink text on White — 1.97:1 · FAIL. Never use pink as text color on white.</p>
+            <div class="dd-preview dd-preview--pink">
+              <div class="dd-mark" style="background: var(--color-primary);">AI</div>
+            </div>
+            <p class="dd-rule">Pink mark on Pink — mark disappears entirely.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ── COLORS ─────────────────────────────────────────── -->
     <section class="card card--mt-5">
-      <p class="mono section-label">COLORS</p>
-      <div class="colors-layout">
-        <div class="colors-palette">
-          <div class="swatch swatch--tall swatch--text" data-color-var="--color-text" data-on-var="--color-bg">
-            <div class="swatch-info">
-              <span class="swatch-name">Deep Purple</span>
-              <span class="mono swatch-hex" data-hex>—</span>
-            </div>
-            <div class="swatch-rgb"><span class="mono" data-rgb>—</span></div>
-            <div class="swatch-actions">
-              <button class="copy" data-copy-hex>copy HEX</button>
-              <button class="copy" data-copy-rgb>copy RGB</button>
-              <button class="copy" data-copy-css>copy CSS var</button>
-            </div>
-          </div>
-          <div class="swatch swatch--medium swatch--surface" data-color-var="--color-surface" data-on-var="--color-text">
-            <div class="swatch-info">
-              <span class="swatch-name">Gray Green</span>
-              <span class="mono swatch-hex" data-hex>—</span>
-            </div>
-            <div class="swatch-rgb"><span class="mono" data-rgb>—</span></div>
-            <div class="swatch-actions">
-              <button class="copy" data-copy-hex>copy HEX</button>
-              <button class="copy" data-copy-rgb>copy RGB</button>
-              <button class="copy" data-copy-css>copy CSS var</button>
+      <div class="section-header">
+        <span class="section-header__number">02</span>
+        <div class="section-header__right">
+          <span class="section-header__label">COLORS</span>
+          <span class="section-header__title">The Palette</span>
+          <div class="section-header__accent"></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
+      <div class="colors-grid">
+
+        <div class="color-block color-block--dp" data-color-var="--color-text">
+          <div>
+            <p class="color-block__name">Deep Purple</p>
+            <p class="color-block__hex">#22113E</p>
+            <p class="color-block__role">TEXT · BG DARK</p>
+            <div class="color-block__actions">
+              <button class="copy color-block__copy" data-copy-hex>copy HEX</button>
+              <button class="copy color-block__copy" data-copy-rgb>copy RGB</button>
+              <button class="copy color-block__copy" data-copy-css>copy CSS var</button>
             </div>
           </div>
-          <div class="swatch swatch--medium swatch--primary" data-color-var="--color-primary" data-on-var="--color-on-primary-strong">
-            <div class="swatch-info">
-              <span class="swatch-name">Pink</span>
-              <span class="mono swatch-hex" data-hex>—</span>
-            </div>
-            <div class="swatch-rgb"><span class="mono" data-rgb>—</span></div>
-            <div class="swatch-actions">
-              <button class="copy" data-copy-hex>copy HEX</button>
-              <button class="copy" data-copy-rgb>copy RGB</button>
-              <button class="copy" data-copy-css>copy CSS var</button>
+          <p class="color-block__desc">Primary surface. Use for backgrounds, type, and structural elements.</p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div class="color-block color-block--gg" data-color-var="--color-surface">
+            <div>
+              <p class="color-block__name">Gray Green</p>
+              <p class="color-block__hex">#CAD8D8</p>
+              <p class="color-block__role">SURFACE</p>
+              <div class="color-block__actions">
+                <button class="copy color-block__copy" data-copy-hex>copy HEX</button>
+                <button class="copy color-block__copy" data-copy-rgb>copy RGB</button>
+                <button class="copy color-block__copy" data-copy-css>copy CSS var</button>
+              </div>
             </div>
           </div>
-          <div class="swatch swatch--medium swatch--accent" data-color-var="--color-accent" data-on-var="--color-text">
-            <div class="swatch-info">
-              <span class="swatch-name">Turquoise</span>
-              <span class="mono swatch-hex" data-hex>—</span>
-            </div>
-            <div class="swatch-rgb"><span class="mono" data-rgb>—</span></div>
-            <div class="swatch-actions">
-              <button class="copy" data-copy-hex>copy HEX</button>
-              <button class="copy" data-copy-rgb>copy RGB</button>
-              <button class="copy" data-copy-css>copy CSS var</button>
+          <div class="color-block color-block--pk" data-color-var="--color-primary">
+            <div>
+              <p class="color-block__name">Pink</p>
+              <p class="color-block__hex">#EA7DFF</p>
+              <p class="color-block__role">PRIMARY ACCENT</p>
+              <div class="color-block__actions">
+                <button class="copy color-block__copy" data-copy-hex>copy HEX</button>
+                <button class="copy color-block__copy" data-copy-rgb>copy RGB</button>
+                <button class="copy color-block__copy" data-copy-css>copy CSS var</button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="colors-description">
-          <h2 class="colors-title">The<br>Colors.</h2>
-          <p class="colors-text">
-            You can use Deep Purple or Gray Green as your primary colors,
-            and Pink and Turquoise as accent colors.
-          </p>
-          <p class="colors-footnote mono">White #FFFFFF</p>
+
+        <div class="color-block color-block--tq" data-color-var="--color-accent">
+          <div>
+            <p class="color-block__name">Turquoise</p>
+            <p class="color-block__hex">#08F2DB</p>
+            <p class="color-block__role">SECONDARY ACCENT</p>
+            <div class="color-block__actions">
+              <button class="copy color-block__copy" data-copy-hex>copy HEX</button>
+              <button class="copy color-block__copy" data-copy-rgb>copy RGB</button>
+              <button class="copy color-block__copy" data-copy-css>copy CSS var</button>
+            </div>
+          </div>
+          <p class="color-block__var">var(--color-accent)</p>
+        </div>
+
+        <div class="color-block color-block--wh" data-color-var="--color-bg">
+          <div>
+            <p class="color-block__name">White</p>
+            <p class="color-block__hex">#FFFFFF</p>
+            <p class="color-block__role">DEFAULT BACKGROUND</p>
+            <div class="color-block__actions">
+              <button class="copy color-block__copy" data-copy-hex>copy HEX</button>
+              <button class="copy color-block__copy" data-copy-rgb>copy RGB</button>
+              <button class="copy color-block__copy" data-copy-css>copy CSS var</button>
+            </div>
+          </div>
+          <p class="color-block__var">var(--color-bg) · default background</p>
+        </div>
+
+      </div>
+
+      <div class="usage-block">
+        <p class="usage-block__label">APPROVED PAIRS</p>
+        <div class="pairs-grid">
+          <div class="pair">
+            <div class="pair__bg" style="background: var(--color-text); color: var(--color-bg);">Aa</div>
+            <div class="pair__meta">
+              <p class="pair__names">White on Deep Purple</p>
+              <p class="pair__ratio">16.8 : 1</p>
+              <p class="pair__status pair__status--aaa">AAA · preferred</p>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="pair__bg" style="background: var(--color-text); color: var(--color-primary);">Aa</div>
+            <div class="pair__meta">
+              <p class="pair__names">Pink on Deep Purple</p>
+              <p class="pair__ratio">5.1 : 1</p>
+              <p class="pair__status pair__status--aa">AA · headlines only</p>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="pair__bg" style="background: var(--color-text); color: var(--color-surface);">Aa</div>
+            <div class="pair__meta">
+              <p class="pair__names">Gray Green on Deep Purple</p>
+              <p class="pair__ratio">6.3 : 1</p>
+              <p class="pair__status pair__status--aaa">AAA · body text ok</p>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="pair__bg" style="background: var(--color-primary); color: var(--color-on-primary);">Aa</div>
+            <div class="pair__meta">
+              <p class="pair__names">Deep Purple on Pink</p>
+              <p class="pair__ratio">8.6 : 1</p>
+              <p class="pair__status pair__status--aaa">AAA · logo mark</p>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="pair__bg" style="background: var(--color-bg); color: var(--color-text); border: 0.5px solid rgba(34,17,62,0.08);">Aa</div>
+            <div class="pair__meta">
+              <p class="pair__names">Deep Purple on White</p>
+              <p class="pair__ratio">16.8 : 1</p>
+              <p class="pair__status pair__status--aaa">AAA · default</p>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="pair__bg" style="background: var(--color-surface); color: var(--color-text);">Aa</div>
+            <div class="pair__meta">
+              <p class="pair__names">Deep Purple on Gray Green</p>
+              <p class="pair__ratio">7.2 : 1</p>
+              <p class="pair__status pair__status--aaa">AAA · surfaces</p>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="pair__bg" style="background: var(--color-bg); color: var(--color-primary); border: 0.5px solid rgba(34,17,62,0.08);">Aa</div>
+            <div class="pair__meta">
+              <p class="pair__names">Pink on White</p>
+              <p class="pair__ratio">1.97 : 1</p>
+              <p class="pair__status pair__status--fail">FAIL · never for text</p>
+            </div>
+          </div>
+          <div class="pair">
+            <div class="pair__bg" style="background: var(--color-accent); color: var(--color-text);">Aa</div>
+            <div class="pair__meta">
+              <p class="pair__names">Deep Purple on Turquoise</p>
+              <p class="pair__ratio">9.1 : 1</p>
+              <p class="pair__status pair__status--aaa">AAA · accent surfaces</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ── PATTERNS ───────────────────────────────────────── -->
     <section class="card patterns-card card--mt-5">
-      <p class="mono section-label">PATTERNS</p>
+      <div class="section-header">
+        <span class="section-header__number">03</span>
+        <div class="section-header__right">
+          <span class="section-header__label">PATTERNS</span>
+          <span class="section-header__title">Generative Surfaces</span>
+          <div class="section-header__accent"></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
       <div class="patterns-frame" id="patterns-frame">
         <button class="button button--primary patterns-load-btn" id="patterns-load-btn">Load live preview</button>
       </div>
@@ -209,7 +352,15 @@
 
     <!-- ── TYPOGRAPHY ─────────────────────────────────────── -->
     <section class="card card--mt-5">
-      <p class="mono section-label">FONTS</p>
+      <div class="section-header">
+        <span class="section-header__number">04</span>
+        <div class="section-header__right">
+          <span class="section-header__label">FONTS</span>
+          <span class="section-header__title">Typography</span>
+          <div class="section-header__accent"></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
       <div class="type-specimen">
         <h2 class="type-specimen-title">Titles in Space Grotesk Light, as big as you can.</h2>
         <p class="type-specimen-mono">Short highlights in Courier Prime Regular.</p>
@@ -266,11 +417,61 @@
           <button class="copy" data-copy="--radius: 4px;">copy radius token</button>
         </div>
       </div>
+
+      <div class="usage-block">
+        <p class="usage-block__label">SPACING SCALE</p>
+        <div class="space-list">
+          <div class="space-row">
+            <span class="space-row__token">--space-1</span>
+            <span class="space-row__value">6px</span>
+            <div class="space-row__bar-wrap"><div class="space-row__bar" style="width: 6px;"></div></div>
+            <span class="space-row__usage">icon gaps, tight label spacing</span>
+          </div>
+          <div class="space-row">
+            <span class="space-row__token">--space-2</span>
+            <span class="space-row__value">10px</span>
+            <div class="space-row__bar-wrap"><div class="space-row__bar" style="width: 10px;"></div></div>
+            <span class="space-row__usage">button padding, badge gaps</span>
+          </div>
+          <div class="space-row">
+            <span class="space-row__token">--space-3</span>
+            <span class="space-row__value">16px</span>
+            <div class="space-row__bar-wrap"><div class="space-row__bar" style="width: 16px;"></div></div>
+            <span class="space-row__usage">inline element spacing</span>
+          </div>
+          <div class="space-row">
+            <span class="space-row__token">--space-4</span>
+            <span class="space-row__value">24px</span>
+            <div class="space-row__bar-wrap"><div class="space-row__bar" style="width: 24px;"></div></div>
+            <span class="space-row__usage">card padding, grid gaps</span>
+          </div>
+          <div class="space-row">
+            <span class="space-row__token">--space-5</span>
+            <span class="space-row__value">36px</span>
+            <div class="space-row__bar-wrap"><div class="space-row__bar" style="width: 36px;"></div></div>
+            <span class="space-row__usage">section internal margin</span>
+          </div>
+          <div class="space-row">
+            <span class="space-row__token">--space-6</span>
+            <span class="space-row__value">52px</span>
+            <div class="space-row__bar-wrap"><div class="space-row__bar" style="width: 52px;"></div></div>
+            <span class="space-row__usage">between sections, page padding</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ── COMPONENTS ─────────────────────────────────────── -->
     <section class="card card--mt-5">
-      <h2>Components (starter)</h2>
+      <div class="section-header">
+        <span class="section-header__number">05</span>
+        <div class="section-header__right">
+          <span class="section-header__label">COMPONENTS</span>
+          <span class="section-header__title">Starter Kit</span>
+          <div class="section-header__accent"></div>
+        </div>
+      </div>
+      <div class="section-divider"></div>
       <div class="components-row">
         <button class="button">Default</button>
         <button class="button button--primary">Primary</button>
@@ -319,7 +520,7 @@
       }
     }
 
-    document.querySelectorAll(".swatch[data-color-var]").forEach((swatch) => {
+    document.querySelectorAll("[data-color-var]").forEach((swatch) => {
       const varName = swatch.getAttribute("data-color-var");
       const value = getCssVar(varName);
       const rgb = normalizeToRgb(value);
