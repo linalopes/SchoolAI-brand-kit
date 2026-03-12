@@ -487,11 +487,97 @@
         <button class="button">Default</button>
         <button class="button button--primary">Primary</button>
         <button class="button button--accent">Accent</button>
-        <span class="badge"><span class="mono">Badge</span> Something important</span>
       </div>
       <div class="components-actions">
         <button class="copy" data-copy='class="button button--primary"'>copy primary class</button>
         <button class="copy" data-copy='class="button button--accent"'>copy accent class</button>
+      </div>
+
+      <div class="component-group">
+        <p class="component-group__label">TAGS / CHIPS</p>
+        <div class="components-row">
+          <span class="badge">Research</span>
+          <span class="badge">Art × Technology</span>
+          <span class="badge badge--primary">AI</span>
+          <span class="badge badge--outline">Speculative</span>
+        </div>
+        <div class="components-actions">
+          <button class="copy" data-copy='class="badge"'>copy badge class</button>
+          <button class="copy" data-copy='class="badge badge--primary"'>copy badge--primary</button>
+        </div>
+      </div>
+
+      <div class="component-group">
+        <p class="component-group__label">INPUT / TEXT FIELD</p>
+        <div class="components-row">
+          <div class="field">
+            <label class="field__label">YOUR NAME</label>
+            <input class="field__input" type="text" placeholder="e.g. Lina Lopes" />
+          </div>
+        </div>
+        <div class="components-actions">
+          <button class="copy" data-copy='class="field"'>copy field class</button>
+        </div>
+      </div>
+
+      <div class="component-group">
+        <p class="component-group__label">CARD</p>
+        <div class="components-row">
+          <div class="component-card">
+            <div class="component-card__accent"></div>
+            <p class="component-card__title">Affective Atmosphere</p>
+            <p class="component-card__body">An interactive installation that maps
+            emotional text to light — 64 LEDs, one cloud, infinite states.</p>
+          </div>
+        </div>
+        <div class="components-actions">
+          <button class="copy" data-copy='class="component-card"'>copy card class</button>
+        </div>
+      </div>
+
+      <div class="component-group">
+        <p class="component-group__label">DIVIDER + SECTION LABEL</p>
+        <div class="components-row">
+          <div class="label-divider">
+            <span class="label-divider__text">METHODOLOGY</span>
+            <div class="label-divider__line"></div>
+          </div>
+        </div>
+        <div class="components-actions">
+          <button class="copy" data-copy='class="label-divider"'>copy divider class</button>
+        </div>
+      </div>
+
+      <div class="component-group">
+        <p class="component-group__label">QUOTE</p>
+        <div class="components-row">
+          <blockquote class="bq">
+            <p class="bq__text">AI is not a tool. It is a material —
+            with grain, resistance, and surprise.</p>
+            <cite class="bq__cite">School of Tomorrow's AI</cite>
+          </blockquote>
+        </div>
+        <div class="components-actions">
+          <button class="copy" data-copy='class="bq"'>copy quote class</button>
+        </div>
+      </div>
+
+      <div class="component-group">
+        <p class="component-group__label">CALLOUT</p>
+        <div class="components-row" style="flex-direction: column;">
+          <div class="callout">
+            <span class="callout__marker">→</span>
+            <p class="callout__text">This framework is open. Use it, adapt it, cite it.</p>
+          </div>
+          <div class="callout callout--dark">
+            <span class="callout__marker">→</span>
+            <p class="callout__text">Always export SVG for print and large format.</p>
+          </div>
+        </div>
+        <div class="components-actions">
+          <button class="copy" data-copy='class="callout"'>copy callout class</button>
+          <button class="copy" data-copy='class="callout callout--dark"'>copy callout--dark</button>
+        </div>
       </div>
     </section>
 
@@ -549,8 +635,10 @@
       if(btnCss) btnCss.addEventListener("click", () => copyText(`${varName}: ${hex};`, btnCss));
     });
 
-    document.querySelectorAll("[data-copy], [data-copy-text]").forEach((el) => {
-      el.addEventListener("click", () => copyText(el.getAttribute("data-copy") || el.getAttribute("data-copy-text"), el));
+    document.querySelectorAll(".copy").forEach((el) => {
+      const copyValue = el.getAttribute("data-copy") || el.getAttribute("data-copy-text");
+      if(!copyValue) return;
+      el.addEventListener("click", () => copyText(copyValue, el));
     });
 
   </script>
