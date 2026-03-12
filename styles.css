@@ -1640,3 +1640,118 @@
   color: var(--color-text);
   border-color: rgba(34, 17, 62, 0.5);
 }
+
+/* ── PAGE LAYOUT ── */
+.page-layout {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  gap: 0;
+}
+
+/* ── SIDE NAV (desktop) ── */
+.sidenav {
+  width: 160px;
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--space-5);
+  padding: var(--space-5) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-self: flex-start;
+}
+
+.sidenav__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s ease, background 0.15s ease;
+}
+
+.sidenav__item:hover {
+  background: rgba(34, 17, 62, 0.03);
+}
+
+.sidenav__item--active {
+  border-left-color: var(--color-primary);
+  background: rgba(234, 125, 255, 0.05);
+}
+
+.sidenav__num {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+}
+
+.sidenav__label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--color-text);
+}
+
+.sidenav__item--active .sidenav__num {
+  color: var(--color-primary);
+}
+
+.sidenav__item--active .sidenav__label {
+  font-weight: 400;
+}
+
+/* ── MAIN CONTENT ── */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── MOBILE NAV ── */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .page-layout {
+    flex-direction: column;
+    padding: 0 var(--space-3);
+  }
+
+  .sidenav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-bg);
+    border-bottom: 0.5px solid rgba(34, 17, 62, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .mobile-nav__item {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: 2px 0;
+    border-bottom: 1.5px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .mobile-nav__item--active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+  }
+}

@@ -25,11 +25,42 @@
     </div>
   </header>
 
-  <main class="container">
+  <nav class="mobile-nav" id="mobile-nav">
+    <a class="mobile-nav__item" href="#logos">01</a>
+    <a class="mobile-nav__item" href="#colors">02</a>
+    <a class="mobile-nav__item" href="#patterns">03</a>
+    <a class="mobile-nav__item" href="#typography">04</a>
+    <a class="mobile-nav__item" href="#components">05</a>
+  </nav>
+
+  <div class="page-layout">
+    <nav class="sidenav" id="sidenav">
+      <a class="sidenav__item" href="#logos">
+        <span class="sidenav__num">01</span>
+        <span class="sidenav__label">Logos</span>
+      </a>
+      <a class="sidenav__item" href="#colors">
+        <span class="sidenav__num">02</span>
+        <span class="sidenav__label">Colors</span>
+      </a>
+      <a class="sidenav__item" href="#patterns">
+        <span class="sidenav__num">03</span>
+        <span class="sidenav__label">Patterns</span>
+      </a>
+      <a class="sidenav__item" href="#typography">
+        <span class="sidenav__num">04</span>
+        <span class="sidenav__label">Typography</span>
+      </a>
+      <a class="sidenav__item" href="#components">
+        <span class="sidenav__num">05</span>
+        <span class="sidenav__label">Components</span>
+      </a>
+    </nav>
+    <main class="main-content">
     <!-- lang="en" throughout, v2 -->
 
     <!-- ── LOGOS ─────────────────────────────────────────── -->
-    <section class="card card--mt-5">
+    <section id="logos" class="card card--mt-5">
       <div class="section-header">
         <span class="section-header__number">01</span>
         <div class="section-header__right">
@@ -163,7 +194,7 @@
     </section>
 
     <!-- ── COLORS ─────────────────────────────────────────── -->
-    <section class="card card--mt-5">
+    <section id="colors" class="card card--mt-5">
       <div class="section-header">
         <span class="section-header__number">02</span>
         <div class="section-header__right">
@@ -318,7 +349,7 @@
     </section>
 
     <!-- ── PATTERNS ───────────────────────────────────────── -->
-    <section class="card patterns-card card--mt-5">
+    <section id="patterns" class="card patterns-card card--mt-5">
       <div class="section-header">
         <span class="section-header__number">03</span>
         <div class="section-header__right">
@@ -363,7 +394,7 @@
     </section>
 
     <!-- ── TYPOGRAPHY ─────────────────────────────────────── -->
-    <section class="card card--mt-5">
+    <section id="typography" class="card card--mt-5">
       <div class="section-header">
         <span class="section-header__number">04</span>
         <div class="section-header__right">
@@ -474,7 +505,7 @@
     </section>
 
     <!-- ── COMPONENTS ─────────────────────────────────────── -->
-    <section class="card card--mt-5">
+    <section id="components" class="card card--mt-5">
       <div class="section-header">
         <span class="section-header__number">05</span>
         <div class="section-header__right">
@@ -582,7 +613,8 @@
       </div>
     </section>
 
-  </main>
+    </main>
+  </div>
 
   <script>
     const root = document.documentElement;
@@ -642,6 +674,26 @@
       el.addEventListener("click", () => copyText(copyValue, el));
     });
 
+  </script>
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const sideItems = document.querySelectorAll('.sidenav__item');
+    const mobileItems = document.querySelectorAll('.mobile-nav__item');
+
+    function setActive(id) {
+      [...sideItems, ...mobileItems].forEach(el => {
+        el.classList.toggle('sidenav__item--active', el.getAttribute('href') === '#' + id);
+        el.classList.toggle('mobile-nav__item--active', el.getAttribute('href') === '#' + id);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+    sections.forEach(s => observer.observe(s));
   </script>
 </body>
 </html>
