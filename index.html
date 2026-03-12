@@ -327,26 +327,37 @@
         </div>
       </div>
       <div class="section-divider"></div>
-      <div class="patterns-frame" id="patterns-frame">
-        <button class="button button--primary patterns-load-btn" id="patterns-load-btn">Load live preview</button>
+      <div class="patterns-grid">
+        <a class="pattern-thumb" href="./patterns/pattern-1.png" target="_blank" rel="noopener">
+          <img src="./patterns/pattern-1.png" alt="Pattern 1" loading="lazy">
+        </a>
+        <a class="pattern-thumb" href="./patterns/pattern-2.png" target="_blank" rel="noopener">
+          <img src="./patterns/pattern-2.png" alt="Pattern 2" loading="lazy">
+        </a>
+        <a class="pattern-thumb" href="./patterns/pattern-3.png" target="_blank" rel="noopener">
+          <img src="./patterns/pattern-3.png" alt="Pattern 3" loading="lazy">
+        </a>
+        <a class="pattern-thumb" href="./patterns/pattern-4.png" target="_blank" rel="noopener">
+          <img src="./patterns/pattern-4.png" alt="Pattern 4" loading="lazy">
+        </a>
+        <a class="pattern-thumb" href="./patterns/pattern-5.png" target="_blank" rel="noopener">
+          <img src="./patterns/pattern-5.png" alt="Pattern 5" loading="lazy">
+        </a>
+        <a class="pattern-thumb" href="./patterns/pattern-6.png" target="_blank" rel="noopener">
+          <img src="./patterns/pattern-6.png" alt="Pattern 6" loading="lazy">
+        </a>
       </div>
-      <div class="patterns-actions">
-        <a href="https://linalopes.github.io/SchoolAI-vignette-generator/" target="_blank" rel="noopener" class="button">Open generator in new tab</a>
-        <button class="copy button" data-copy="https://linalopes.github.io/SchoolAI-vignette-generator/">Copy generator link</button>
-      </div>
-      <div class="patterns-description">
-        <p>Use the vignette generator to create unique brand patterns. Export as SVG for crisp, scalable graphics.</p>
-      </div>
-      <div class="patterns-downloads">
-        <p class="mono section-label">DOWNLOADS</p>
-        <div class="patterns-downloads-buttons">
-          <a href="./patterns/pattern-1.png"   download class="button">pattern-1.png</a>
-          <a href="./patterns/pattern-2.png"   download class="button">pattern-2.png</a>
-          <a href="./patterns/pattern-3.png"   download class="button">pattern-3.png</a>
-          <a href="./patterns/pattern-4.png"   download class="button">pattern-4.png</a>
-          <a href="./patterns/pattern-5.png"   download class="button">pattern-5.png</a>
-          <a href="./patterns/pattern-6.png"   download class="button">pattern-6.png</a>
-        </div>
+
+      <p class="section-body">Use the vignette generator to create unique brand patterns. Export as SVG for crisp, scalable graphics.</p>
+
+      <div class="pattern-invite">
+        <p class="pattern-invite__text">Each pattern is generative — no two outputs are the same.</p>
+        <a href="https://linalopes.github.io/SchoolAI-vignette-generator/"
+           target="_blank"
+           rel="noopener"
+           class="pattern-invite__cta">
+          Make a new pattern →
+        </a>
       </div>
     </section>
 
@@ -538,24 +549,10 @@
       if(btnCss) btnCss.addEventListener("click", () => copyText(`${varName}: ${hex};`, btnCss));
     });
 
-    document.querySelectorAll("[data-copy]").forEach((el) => {
-      el.addEventListener("click", () => copyText(el.getAttribute("data-copy"), el));
+    document.querySelectorAll("[data-copy], [data-copy-text]").forEach((el) => {
+      el.addEventListener("click", () => copyText(el.getAttribute("data-copy") || el.getAttribute("data-copy-text"), el));
     });
 
-    (function initPatternsFrame(){
-      const btn = document.getElementById("patterns-load-btn");
-      const container = document.getElementById("patterns-frame");
-      if(!btn || !container) return;
-      btn.addEventListener("click", function(){
-        const iframe = document.createElement("iframe");
-        iframe.src = "https://linalopes.github.io/SchoolAI-vignette-generator/";
-        iframe.className = "patterns-iframe";
-        iframe.setAttribute("loading","lazy");
-        iframe.setAttribute("title","SOTA Vignette Generator");
-        container.innerHTML = "";
-        container.appendChild(iframe);
-      });
-    })();
   </script>
 </body>
 </html>
